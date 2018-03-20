@@ -1,9 +1,9 @@
 
 const API_URL = 'http://localhost:9393/api/v1';
 
-const addLike = meme => {
+const updateMeme = meme => {
   return {
-    type: 'LIKE_ADDED',
+    type: 'UPDATE_MEME',
     meme
   }
 }
@@ -20,23 +20,8 @@ export const createLike = meme => {
     })
     .then(response => response.json())
     .then(meme => {
-      dispatch(addLike(meme))
+      dispatch(updateMeme(meme))
       console.log(meme)
     })
   }
 }
-// plain js obj with a type, gets passed as arg in reducer
-// const resetLikes = meme => {
-//   return {
-//     type: 'LIKES_RESET',
-//     meme
-//   }
-// }
-// export const updateLikes = meme => {
-//   return dispatch => {
-//     return fetch(`${API_URL}/memes/${meme.id}/likes`)
-//       .then(response => response.json())
-//       .then(memes => dispatch(resetLikes(meme)))
-//       .catch(error => console.log(error));
-//   }
-// }

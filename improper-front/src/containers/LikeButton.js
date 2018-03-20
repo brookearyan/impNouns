@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createLike } from '../actions/likes'
+import { updateMemeFormData } from '../actions/memeForm'
 import { getMemes } from '../actions/memes'
 
 class LikeButton extends Component {
@@ -33,5 +34,6 @@ class LikeButton extends Component {
 }
 
 export default connect(null, {
+  updateMemeFormData,
   createLike
 })(LikeButton);
