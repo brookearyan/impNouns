@@ -8,7 +8,7 @@ export default (state = [], action) => {
      case 'UPDATE_MEME': {
        let index = state.findIndex((meme) => meme.id == action.meme.id);
        return [...state.slice(0, index), action.meme, ...state.slice(index +1)];
-   }
+     }
     default:
       return state;
   }
