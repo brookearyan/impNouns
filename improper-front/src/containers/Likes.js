@@ -3,9 +3,7 @@ import LikeButton from './LikeButton'
 import { getMemes } from '../actions/likes'
 
 export class Likes extends Component {
-  componentDidUpdate() {
-    this.props.getMemes();
-  }
+
   render() {
     return (
       <div className="like-button">
